@@ -1,4 +1,4 @@
-name: Mineplexer
-main: mineplex.bungee.Mineplexer
+name: Fakeplexer
+main: net.angusbeefgaming.fakeplexer.Fakeplexer
 version: 1
-author: defek7
+author: ["Atticus Zambrana"]
