@@ -18,8 +18,13 @@ public class MotdManager implements Listener, Runnable
 	
 
 	private Random _random = new Random();
+	
+	// Yes, here is where the MOTD for the Proxy server is set.
+	
 	private String _firstLine = "                §b§l§m   §8§l§m[ §r §9§lFakeplex§r §f§lGames§r §8§l§m ]§b§l§m   §r";
 	private String _secondLine = "                        §f§l◄§c§lMAINTENANCE§f§l►";
+	
+	
 	private List<String> _motdLines;
 	
 	public MotdManager(Plugin plugin)
