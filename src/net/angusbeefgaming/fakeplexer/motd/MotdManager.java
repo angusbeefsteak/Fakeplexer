@@ -18,7 +18,8 @@ public class MotdManager implements Listener, Runnable
 	
 
 	private Random _random = new Random();
-	private String _firstLine = "                §b§l§m   §8§l§m[ §r §9§lInfinity§r §f§lGames§r §8§l§m ]§b§l§m   §r";
+	private String _firstLine = "                §b§l§m   §8§l§m[ §r §9§lFakeplex§r §f§lGames§r §8§l§m ]§b§l§m   §r";
+	private String _secondLine = "                        §f§l◄§c§lMAINTENANCE§f§l►";
 	private List<String> _motdLines;
 	
 	public MotdManager(Plugin plugin)
@@ -29,17 +30,6 @@ public class MotdManager implements Listener, Runnable
 		_plugin.getProxy().getPluginManager().registerListener(_plugin, this);
 		
 		run();
-		
-		if (new File("updateMOTD.dat").exists())
-		{
-			List<String> lines = new ArrayList<String>();
-			lines.add("             §b§l◄§f§lNEW§b§l►     §f§l◄§b§lSKYWARS§f§l►     §b§l◄§f§lNEW§b§l►");
-			//lines.add("                     §d§lRank Sale §a§l40% Off");
-			//lines.add("                        §f§l◄§c§lMAINTENANCE§f§l►");
-			
-			updateMainMotd("                §b§l§m   §8§l§m[ §r §9§lMineplex§r §f§lGames§r §8§l§m ]§b§l§m   §r", lines);
-			System.out.println("Updated Bungee MOTD");
-		}
 	}
  
 	@EventHandler
@@ -47,11 +37,7 @@ public class MotdManager implements Listener, Runnable
 	{
 		net.md_5.bungee.api.ServerPing serverPing = event.getResponse();
 
-		String motd = _firstLine;
-		if (_motdLines != null && _motdLines.size() > 0)
-		{
-			motd += "\n" + _motdLines.get(_random.nextInt(_motdLines.size()));
-		}
+		String motd = _firstLine + "\n" + _secondLine;
 		
 		event.setResponse(new net.md_5.bungee.api.ServerPing(serverPing.getVersion(), serverPing.getPlayers(), motd, serverPing.getFaviconObject()));
 	}
