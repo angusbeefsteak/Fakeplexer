@@ -22,7 +22,11 @@ public class MotdManager implements Listener, Runnable
 	// Yes, here is where the MOTD for the Proxy server is set.
 	
 	private String _firstLine = "                §b§l§m   §8§l§m[ §r §9§lFakeplex§r §f§lGames§r §8§l§m ]§b§l§m   §r";
-	private String _secondLine = "                        §f§l◄§c§l MAINTENANCE §f§l►";
+	private String _secondLine = "§f§l◄§c§l OWNED BY ATTICUS ZAMBRANA! §f§l►";
+	
+	// ALL LINES
+	// "                        §f§l◄§c§l MAINTENANCE §f§l►"
+	
 	
 	
 	private List<String> _motdLines;
